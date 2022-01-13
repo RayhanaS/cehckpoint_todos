@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Addtodolist from './component/Addtodolist'
+import Todolist from './component/Todolist'
+import {useState} from 'react'
+import {useSelector} from 'react-redux'
 function App() {
+  const [todos, setTodos] = useState([
+    { text: "save the galaxy", id: 1, isDone: false },
+    { text: "walk the cat ", id: 2, isDone: false },
+    { text: "attend the workshop ", id: 3, isDone: false },
+  ]);
+  const data = useSelector((state) => state.todos)
+  if(data.length < todos.length) {
+    setTodos(data)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>to do app</h1>
+       <Addtodolist />
+       <Todolist todos={todos} />
     </div>
   );
 }

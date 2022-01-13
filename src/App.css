@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+html,body{
+  background-color: crimson;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +39,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+input{
+  width: 450px;
+  padding:15px;
+  margin:0 20px;
+}
+button{
+  
+  padding:10px 60px;
+}
+h1{
+  font-family: 'Neonderthaw', cursive;
+}
+.todolist{
+  background-color:linear-gradient(red,white,blue)
 }
